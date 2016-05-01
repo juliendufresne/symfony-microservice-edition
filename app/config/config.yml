@@ -8,6 +8,7 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: en
+    mailer.spool_dir: '%kernel.root_dir%/files/spool'
 
 framework:
     #esi:             ~
@@ -63,8 +64,10 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
-    spool:     { type: memory }
+    transport:        '%mailer.transport%'
+    host:             '%mailer.host%'
+    port:             '%mailer.port%'
+    encryption:       '%mailer.encryption%'
+    username:         '%mailer.user%'
+    password:         '%mailer.password%'
+    delivery_address: '%mailer.delivery_address%'
