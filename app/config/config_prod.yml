@@ -12,17 +12,49 @@ imports:
 #        metadata_cache_driver: apc
 #        result_cache_driver: apc
 #        query_cache_driver: apc
-
 monolog:
     handlers:
         main:
             type:         fingers_crossed
             action_level: error
-            handler:      nested
+            handler:      main_grouped
+            channels:     ['!doctrine','!security']
+        main_grouped:
+            type:    group
+            members: [nested, swift]
+            formatter: monolog.formatter.session_request
         nested:
             type:  stream
-            path:  "%kernel.logs_dir%/%kernel.environment%.log"
+            path:  '%kernel.logs_dir%/%kernel.environment%.main.log'
             level: debug
+            formatter: monolog.formatter.session_request
+
+        doctrine:
+            type:         fingers_crossed
+            action_level: error
+            handler:      doctrine_grouped
+            channels:     [doctrine]
+        doctrine_grouped:
+            type:    group
+            members: [doctrine_nested, swift]
+        doctrine_nested:
+            type:  stream
+            path:  '%kernel.logs_dir%/%kernel.environment%.doctrine.log'
+            level: debug
+
+        swift:
+            type:               swift_mailer
+            from_email:         '%monolog.email.from%'
+            to_email:           '%monolog.email.to%'
+            subject:            '%monolog.email.subject%'
+            level:              debug
+
+        login:
+            type:     stream
+            path:     '%kernel.logs_dir%/%kernel.environment%.login.log'
+            level:    info
+            channels: [security]
+
         console:
             type:  console
 
