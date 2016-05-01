@@ -1,4 +1,5 @@
 /.php_cs.cache
+/.vagrant/
 /app/config/parameters.yml
 /build/
 /phpunit.xml
