@@ -1,0 +1,17 @@
+myconfig:
+    path:
+        extensions: php
+        exclude: tests
+    logging:
+        report:
+            html:   ./var/logs/phpmetrics/report.html
+        violations:
+            xml:    ./var/logs/phpmetrics/violations.xml
+
+    # condition of failure
+    failure: average.maintainabilityIndex < 50 or sum.loc > 10000
+
+    # rules used for color ([ critical, warning, good ])
+    rules:
+      cyclomaticComplexity: [ 10, 6, 2 ]
+      maintainabilityIndex: [ 0, 69, 85 ]
