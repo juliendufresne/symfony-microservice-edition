@@ -2,6 +2,7 @@
 /.vagrant/
 /app/config/parameters.yml
 /build/
+/composer.phar
 /phpunit.xml
 /var/*
 !/var/cache
