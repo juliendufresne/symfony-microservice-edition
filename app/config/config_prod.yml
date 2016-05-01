@@ -25,3 +25,8 @@ monolog:
             level: debug
         console:
             type:  console
+
+swiftmailer:
+    spool:
+        type: file
+        path: '%mailer.spool_dir%'
