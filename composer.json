@@ -30,6 +30,7 @@
     },
     "require-dev": {
         "fabpot/php-cs-fixer": "^1.11",
+        "phpunit/phpunit": "^5.3",
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0"
     },
