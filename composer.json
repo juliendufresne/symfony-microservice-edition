@@ -1,10 +1,10 @@
 {
-    "name": "julien/symfony.microservice.edition",
-    "license": "proprietary",
+    "name": "juliendufresne/symfony-microservice-edition",
+    "license": "MIT",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "": "src/"
+            "AppBundle\\": "src/AppBundle/"
         },
         "classmap": [
             "app/AppKernel.php",
