@@ -24,5 +24,8 @@ parameters:
     rabbitmq.password: 'symfony-microservice-edition'
     rabbitmq.vhost:    '/symfony-microservice-edition'
 
+    redis.doctrine_cache: 'redis://redis.dev/1'
+    redis.session:        'redis://redis.dev/2'
+
     # A secret key that's used to generate certain security-related tokens
     secret:            ThisTokenIsNotSoSecretChangeIt

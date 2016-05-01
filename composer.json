@@ -29,7 +29,8 @@
         "incenteev/composer-parameter-handler": "^2.0",
 
         "juliendufresne/composer-version-handler": "^1.0",
-        "php-amqplib/rabbitmq-bundle": "^1.9"
+        "php-amqplib/rabbitmq-bundle": "^1.9",
+        "snc/redis-bundle": "2.x-dev"
     },
     "require-dev": {
         "fabpot/php-cs-fixer": "^1.11",

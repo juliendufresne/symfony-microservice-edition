@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             
             // Third party
             new OldSound\RabbitMqBundle\OldSoundRabbitMqBundle(),
+            new Snc\RedisBundle\SncRedisBundle(),
 
             // Company
             // ...
