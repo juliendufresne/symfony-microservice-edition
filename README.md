@@ -1,4 +1,7 @@
 symfony-microservice-edition
 ============================
 
-A Symfony project created on May 1, 2016, 10:36 pm.
+Components
+----------
+
+- php-cs-fixer for dev with a [.php_cs](.php_cs) config file
