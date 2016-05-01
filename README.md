@@ -20,6 +20,14 @@ The project override `php bin/console rabbitmq:consumer` command (see [ConsumerC
 1. Update all rabbitmq.* parameters in [parameters.yml.dist](app/config/parameters.yml.dist)
 2. Define some consumer in [old_sound_rabbit_mq.yml](app/config/bundle/old_sound_rabbit_mq.yml)
 
+### Version management
+
+[vendor](https://github.com/juliendufresne/VersionHandler)
+
+We use the version management composer script for 2 things:
+1. an `app_version` parameter is used internally for caching key
+2. an `assets_version` parameter is used to switch the assets when we release another version of the service
+
 ### Dev tools
 
 - [php-cs-fixer](https://github.com/FriendsOfPHP/PHP-CS-Fixer) - [config file](.php_cs): `./vendor/bin/php-cs-fixer fix -vvv`

@@ -27,6 +27,8 @@
         "sensio/distribution-bundle": "^5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "^2.0",
+
+        "juliendufresne/composer-version-handler": "^1.0",
         "php-amqplib/rabbitmq-bundle": "^1.9"
     },
     "require-dev": {
@@ -39,6 +41,7 @@
     "scripts": {
         "post-install-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "JulienDufresne\\VersionHandler\\ScriptHandler::updateVersion",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
@@ -47,6 +50,7 @@
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "JulienDufresne\\VersionHandler\\ScriptHandler::updateVersion",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
@@ -63,6 +67,17 @@
         "symfony-assets-install": "relative",
         "incenteev-parameters": {
             "file": "app/config/parameters.yml"
-        }
+        },
+        "juliendufresne-version": [
+            {
+                "file": "app/config/parameters.yml",
+                "parameter-key": "parameters.app_version"
+            },
+            {
+                "file": "app/config/parameters.yml",
+                "parameter-key": "parameters.assets_version",
+                "strategies": ["incremental"]
+            }
+        ]
     }
 }
