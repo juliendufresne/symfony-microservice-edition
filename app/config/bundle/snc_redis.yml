@@ -1,0 +1,34 @@
+snc_redis:
+    clients:
+        doctrine_cache:
+            type: phpredis
+            alias: doctrine_cache
+            dsn: '%redis.doctrine_cache%'
+            logging: true
+            options:
+                prefix: '%app_version%_doctrine_'
+        session:
+            type: phpredis
+            alias: session
+            dsn: '%redis.session%'
+            logging: true
+    doctrine:
+        metadata_cache:
+            client: doctrine_cache
+            entity_manager: default
+            namespace: 'metadata:'
+        query_cache:
+            client: doctrine_cache
+            entity_manager: default
+            namespace: 'query:'
+        result_cache:
+            client: doctrine_cache
+            entity_manager: default
+            namespace: 'result:'
+        second_level_cache:
+            client: doctrine_cache
+            entity_manager: default
+            namespace: 'second_level:'
+    session:
+        client: session
+        prefix: '%app_version%_session:'
