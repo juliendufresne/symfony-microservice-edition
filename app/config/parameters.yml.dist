@@ -21,6 +21,10 @@ parameters:
     mailer.password:         null
     mailer.delivery_address: change-this-to-your-email@example.com
 
+    monolog.email.from:    development@symfony-microservice-edition.com
+    monolog.email.to:      change-this-to-your-email@example.com
+    monolog.email.subject: '[symfony microservice edition] Error on development'
+
     rabbitmq.host:     'rabbitmq.dev'
     rabbitmq.port:     5672
     rabbitmq.user:     'symfony-microservice-edition'
