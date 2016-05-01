@@ -81,3 +81,13 @@ Remove a component
 Each component is installed using a separate pull request.
 If you want to remove a component, just have a look at the pull request and see the diff.
 If this is not enough, do not hesitate to post an issue.
+
+Vagrant
+-------
+
+This project includes a vagrant box with:
+- php7.0
+- a redis server
+- a rabbitmq server
+
+The provisioning is in shell so you can easily check what's required to run such a project.
