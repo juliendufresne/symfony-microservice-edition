@@ -4,7 +4,7 @@
 Vagrant.configure(2) do |config|
   config.vm.box = "debian/jessie64"
   config.vm.network "private_network", ip: "192.168.99.99"
-  config.vm.synced_folder ".", "/vagrant"
+  config.vm.synced_folder ".", "/vagrant", id: "v-root", mount_options: ["rw", "tcp", "nolock", "noacl", "async"], type: "nfs", nfs_udp: false
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "8096"
     vb.cpus = "4"
