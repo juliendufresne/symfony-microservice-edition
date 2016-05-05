@@ -23,6 +23,9 @@ Vagrant.configure(2) do |config|
      apt-get install -y curl git php7.0-cli php7.0-curl php7.0-intl php7.0-mysql php7.0-redis rabbitmq-server redis-server vim
 
      rabbitmq-plugins enable rabbitmq_management
+     # allows guest user to connect from everywhere
+     echo "[{rabbit, [{loopback_users, []}]}]."  | sudo tee /etc/rabbitmq/rabbitmq.config >/dev/null
+     service rabbitmq-server restart
 
      cat >/etc/php/mods-available/custom.ini <<EOF
 date.timezone = 'UTC'
